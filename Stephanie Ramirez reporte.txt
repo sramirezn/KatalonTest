@@ -1,0 +1,62 @@
+1. Identificar los test cases
+
+ 1.El boton calculate no funciona cuando se digita mas de tres digitos, como tambien genera error 500 en la consola
+ 2.Al ingresar un numero negativo deberia mostrar una advertencia
+ 3.El texto de los terminos y condiciones se vincula al documento de privacidad y viceversa
+ 4.La flecha a la izquierda del cuadro de texto deberia ser una etiqueta
+
+2. Automatizar con una herramienta de tu elección al menos 1 test case
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+WebUI.openBrowser('http://qainterview.pythonanywhere.com/')
+
+WebUI.setText(findTestObject('Object Repository/test_case_python/input_The greatest factorial calculator_number'), '4444')
+
+WebUI.click(findTestObject('Object Repository/test_case_python/button_Calculate'))
+
+
+
+3. Documentar al menos 1 test case
+
+  
+El texto de los terminos y condiciones se vincula al documento de privacidad y viceversa
+
+  
+4. Si encuentras algún bug, crear un reporte
+
+      Titulo
+  El boton calculate no funciona cuando se digita mas de tres digitos
+  
+   Descripcion
+  *Pasos para la reproduccion
+ 1. abrir el navegador
+ 2 . colocar la URL "http://qainterview.pythonanywhere.com/" y darle enter
+ 3. al darle click al input o cuandro de texto, al digitar mas de 3 numero este no emite el resultado en la pantalla, pero por la consola genera
+    error 500 
+   Datos de pruebas:
+   (1111)
+
+   Resultado esperado:
+
+ - debe emitir el resultado del calculo factorial 
+
+   Resultado actual 
+
+ - este no emite ningun resultado en pantalla 
